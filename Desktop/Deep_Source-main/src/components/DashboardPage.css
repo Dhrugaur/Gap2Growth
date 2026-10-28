@@ -1,0 +1,799 @@
+/* =========================================================
+   OPENHUB — DASHBOARD PAGE (PIXEL ART / GITHUB DARK THEME)
+========================================================= */
+
+.dashboard-container {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+
+  background: #0d1117;
+  color: #e6edf3;
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  box-sizing: border-box;
+}
+
+.dashboard-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+
+  padding: 20px 24px 32px 24px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.dashboard-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dashboard-container::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 0;
+}
+
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.dashboard-header {
+  min-height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 12px;
+  border-bottom: 1px solid #30363d;
+
+  box-sizing: border-box;
+}
+
+.dashboard-title-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.dashboard-avatar-box {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #30363d;
+  border-radius: 10px;
+
+  background: #161b22;
+
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.15), inset 0 0 8px rgba(56, 189, 248, 0.08);
+
+  flex-shrink: 0;
+}
+
+.dashboard-text-info {
+  min-width: 0;
+}
+
+.dashboard-title {
+  margin: 0;
+
+  font-family: "Press Start 2P", monospace;
+  font-size: 20px;
+  line-height: 1.1;
+
+  color: #f0f6fc;
+
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px rgba(240, 246, 252, 0.25);
+}
+
+.dashboard-subtitle {
+  margin: 4px 0 0;
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
+  line-height: 1.2;
+
+  color: #c084fc;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   WELCOME BANNER
+========================================================= */
+
+.welcome-card {
+  padding: 8px 14px;
+
+  border: 1px solid #30363d;
+  border-radius: 6px;
+
+  background: #161b22;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+
+  gap: 2px;
+}
+
+.welcome-heading {
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.welcome-subtext {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 12px;
+
+  color: #8b949e;
+}
+
+
+/* =========================================================
+   METRIC / KPI CARDS (TOP ROW)
+========================================================= */
+
+.metrics-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  width: 100%;
+}
+
+.metric-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+
+  padding: 16px 18px;
+  box-sizing: border-box;
+
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.metric-card:hover {
+  border-color: #58a6ff;
+  transform: translateY(-2px);
+}
+
+.metric-card-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.metric-icon-wrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.metric-details {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.metric-label {
+  font-family: "Press Start 2P", monospace;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+}
+
+.metric-label-green {
+  color: #4ade80;
+}
+
+.metric-label-cyan {
+  color: #38bdf8;
+}
+
+.metric-label-purple {
+  color: #c084fc;
+}
+
+.metric-value {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.metric-delta {
+  font-size: 11px;
+  color: #3fb950;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   COMMON DASH PANEL
+========================================================= */
+
+.dash-panel {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.panel-header {
+  height: 42px;
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #21262d;
+  background: #161b22;
+}
+
+.panel-title {
+  font-family: "Press Start 2P", monospace;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+.green-tag {
+  color: #4ade80;
+}
+
+.view-all-link {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+
+  color: #a855f7;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.view-all-link:hover {
+  color: #c084fc;
+  text-decoration: underline;
+}
+
+.pixel-select {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+
+  color: #e6edf3;
+  font-size: 11px;
+  padding: 4px 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   MIDDLE ROW (HEATMAP + QUICK ACTIONS)
+========================================================= */
+
+.middle-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(320px, 1fr);
+  gap: 14px;
+  width: 100%;
+}
+
+
+/* Heatmap */
+
+.heatmap-wrapper {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.heatmap-months-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.month-spacer {
+  width: 32px;
+  flex-shrink: 0;
+}
+
+.months-labels {
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
+  padding-right: 4px;
+}
+
+.month-label {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 10px;
+  color: #8b949e;
+  font-weight: 600;
+}
+
+.heatmap-grid-container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+}
+
+.day-labels {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 106px;
+  width: 28px;
+  flex-shrink: 0;
+}
+
+.day-label {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 9px;
+  color: #8b949e;
+  font-weight: 600;
+  line-height: 13px;
+}
+
+.heatmap-matrix {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  width: 100%;
+}
+
+.heatmap-row {
+  display: flex;
+  gap: 4px;
+  width: 100%;
+}
+
+.heatmap-cell {
+  flex: 1;
+  aspect-ratio: 1 / 1;
+  min-width: 8px;
+  border-radius: 2px;
+  background: #161b22;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.heatmap-cell:hover {
+  transform: scale(1.3);
+  z-index: 10;
+}
+
+
+.level-0 {
+  background: #161b22;
+}
+
+.level-1 {
+  background: #0e4429;
+}
+
+.level-2 {
+  background: #006d32;
+}
+
+.level-3 {
+  background: #26a641;
+}
+
+.level-4 {
+  background: #39d353;
+  box-shadow: 0 0 4px rgba(57, 211, 83, 0.6);
+}
+
+.heatmap-legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #8b949e;
+  margin-top: 4px;
+}
+
+.legend-cells {
+  display: flex;
+  gap: 3px;
+}
+
+.legend-cell {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+
+/* Quick Actions */
+
+.quick-actions-list {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  flex: 1;
+}
+
+.quick-action-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 10px 14px;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.quick-action-item:hover {
+  border-color: #58a6ff;
+  background: #161b22;
+  transform: translateX(2px);
+}
+
+.action-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.action-icon-search {
+  background: #141f36;
+  border: 1px solid #1d4ed8;
+}
+
+.action-icon-bug {
+  background: #24143a;
+  border: 1px solid #7e22ce;
+}
+
+.action-icon-robot {
+  background: #0f243a;
+  border: 1px solid #0284c7;
+}
+
+.action-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  text-align: left;
+}
+
+.action-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f0f6fc;
+}
+
+.action-sub {
+  font-size: 11px;
+  color: #8b949e;
+}
+
+
+/* =========================================================
+   BOTTOM ROW (RECENT CONTRIBS, SCORE, BADGES)
+========================================================= */
+
+.bottom-row {
+  display: grid;
+  grid-template-columns: 1.3fr 1.1fr 1.1fr;
+  gap: 14px;
+  width: 100%;
+}
+
+
+/* Recent Contributions */
+
+.contribs-list {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contrib-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 8px 10px;
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 6px;
+
+  transition: border-color 0.15s ease;
+}
+
+.contrib-item:hover {
+  border-color: #58a6ff;
+}
+
+.contrib-icon-wrap {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contrib-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  gap: 2px;
+}
+
+.contrib-repo {
+  font-size: 12px;
+  font-weight: 600;
+  color: #58a6ff;
+}
+
+.contrib-title {
+  font-size: 12px;
+  color: #e6edf3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contrib-meta {
+  font-size: 10px;
+  color: #8b949e;
+}
+
+.status-pill {
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 12px;
+  font-family: system-ui, sans-serif;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.pill-merged {
+  background: rgba(46, 160, 67, 0.15);
+  color: #3fb950;
+  border: 1px solid rgba(46, 160, 67, 0.4);
+}
+
+.pill-open {
+  background: rgba(249, 115, 22, 0.15);
+  color: #f97316;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+}
+
+
+/* Contributor Score */
+
+.score-content {
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.gauge-wrapper {
+  position: relative;
+  width: 106px;
+  height: 106px;
+  flex-shrink: 0;
+}
+
+.score-gauge {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.gauge-center-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.gauge-score {
+  font-family: "Press Start 2P", monospace;
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.gauge-max {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 11px;
+  color: #8b949e;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.score-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.bar-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bar-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+}
+
+.bar-name {
+  color: #e6edf3;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.bar-pct {
+  color: #8b949e;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.bar-track {
+  width: 100%;
+  height: 7px;
+  background: #111a26;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 4px;
+}
+
+.bar-fill-green {
+  background: #22c55e;
+}
+
+.bar-fill-purple {
+  background: #7c3aed;
+}
+
+.bar-fill-cyan {
+  background: #0284c7;
+}
+
+.bar-fill-orange {
+  background: #ea580c;
+}
+
+
+
+/* Recent Badges */
+
+.badges-list {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.badge-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 8px 10px;
+  background: #0d1117;
+  border: 1px solid #21262d;
+  border-radius: 6px;
+
+  transition: border-color 0.15s ease;
+}
+
+.badge-item:hover {
+  border-color: #58a6ff;
+}
+
+.badge-icon-box {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.badge-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.badge-desc {
+  font-size: 11px;
+  color: #8b949e;
+}
+
+.badge-time {
+  font-size: 10px;
+  color: #64748b;
+}
+
+
+/* =========================================================
+   RESPONSIVENESS
+========================================================= */
+
+@media (max-width: 1100px) {
+  .metrics-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .middle-row {
+    grid-template-columns: 1fr;
+  }
+
+  .bottom-row {
+    grid-template-columns: 1fr;
+  }
+}
